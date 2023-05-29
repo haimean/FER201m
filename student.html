@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+  <!-- Add the FontAwesome CSS file -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <!-- Add the FontAwesome JavaScript file (optional) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
+  <title>Students</title>
+</head>
+
+<body>
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="#">Logo</a>
+      <form class="form-inline">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      </form>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+        aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-between" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-item nav-link " href="./index.html">
+            <i class="fa fa-home" aria-hidden="true"></i>
+            Home</span></a>
+          <a class="nav-item nav-link" href="./student.html">
+            <i class="fa fa-graduation-cap" aria-hidden="true"></i>
+            Student
+          </a>
+        </div>
+        <div>
+          <a href="/login.html" style="color: black;">Login</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <div class="container mt-5">
+    <h2>List of student </h2>
+
+    <!-- Form Input -->
+    <div class="card p-3">
+      <form>
+        <div class="form-group">
+          <label for="inputId">Student Id </label>
+          <input type="number" class="form-control" id="inputId" aria-describedby="emailHelp" placeholder="Enter ID">
+        </div>
+        <div class="form-group">
+          <label for="inputName">Student Name</label>
+          <input type="text" class="form-control" id="inputName" placeholder="Enter Name">
+        </div>
+        <div class="form-group">
+          <label for="inputAge">Student Age</label>
+          <input type="number" class="form-control" id="inputAge" placeholder="Enter Age">
+        </div>
+        <div class="form-group">
+          <label for="inputGender">Student Gender</label>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="inputGender" value="male">
+            <label class="form-check-label" for="inputGender">
+              Male
+            </label>
+          </div>
+          <div class=" form-check">
+            <input class="form-check-input" type="radio" name="inputGender" value="female">
+            <label class="form-check-label" for="inputGender">
+              Female
+            </label>
+          </div>
+        </div>
+        <button type="button" class="btn btn-primary" onclick="onSave()">Save</button>
+        <button type="button" class="btn btn-secondary" onclick="onUpdate()">Update</button>
+        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modalDelete">Delete</button>
+        <button type="button" class="btn btn-success" onclick="onSort()">Sort</button>
+        <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#modalSearch">Search</button>
+      </form>
+    </div>
+
+    <!-- Table Students -->
+    <table class="table mt-5">
+      <thead>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">Name</th>
+          <th scope="col">Age</th>
+          <th scope="col">Gender</th>
+        </tr>
+      </thead>
+      <tbody id="body-table">
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Footer -->
+  <footer class="container">
+    <div class="row">
+      <div class="col-sm-3"> Logo</div>
+      <div class="col-sm-9">
+        <div class="row">
+          <div class="col-sm-6">
+            bai 1
+          </div>
+          <div class="col-sm-6">
+            bai 2
+          </div>
+          <div class="col-sm-6">
+            bai 3
+          </div>
+          <div class="col-sm-6">
+            bai 4
+          </div>
+        </div>
+      </div>
+    </div>
+    <p>@2023</p>
+  </footer>
+
+  <!-- Modal Delete -->
+  <div class="modal fade" id="modalDelete" tabindex="-1" role="dialog" aria-labelledby="modalDelete" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Delete student</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="form-group">
+              <label for="inputDeleteId">Student Id </label>
+              <input type="number" class="form-control" id="inputDeleteId" placeholder="Enter ID">
+            </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-danger" data-dismiss="modal" onclick="onDelete()">Delete</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Search -->
+  <div class="modal fade" id="modalSearch" tabindex="-2" role="dialog" aria-labelledby="modalSearch" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Delete student</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="form-group">
+              <label for="inputSearch">Student Name </label>
+              <input type="texts" class="form-control" id="inputSearch" placeholder="Enter Name">
+            </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-warning" data-dismiss="modal" onclick="onSearch()">Search</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- jQuery first, then Popper.js, then Bootstrap JS. -->
+  <script src="./main.js"></script>
+  <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
+  <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
+  <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>

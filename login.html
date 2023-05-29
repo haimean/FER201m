@@ -5,11 +5,104 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+  <!-- Add the FontAwesome CSS file -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <!-- Add the FontAwesome JavaScript file (optional) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
+  <title>Login</title>
 </head>
 
 <body>
-  login
+
+  <!-- header -->
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="#">Logo</a>
+      <form class="form-inline">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      </form>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+        aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-between" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-item nav-link " href="./index.html">
+            <i class="fa fa-home" aria-hidden="true"></i>
+            Home</span></a>
+          <a class="nav-item nav-link" href="./student.html">
+            <i class="fa fa-graduation-cap" aria-hidden="true"></i>
+            Student
+          </a>
+        </div>
+        <div>
+          <a href="/login.html" style="color: black;">Login</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Form Login -->
+  <div class="card mt-5 mx-auto" style="max-width: 395px">
+    <form class="card-body">
+      <h4 class="card-title text-center mb-4 mt-1">Sign in</h4>
+      <hr>
+      <form>
+        <div class="form-group">
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+            </div>
+            <input name="" class="form-control" placeholder="Email or login" type="email">
+          </div> <!-- input-group.// -->
+        </div> <!-- form-group// -->
+        <div class="form-group">
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+            </div>
+            <input class="form-control" placeholder="******" type="password">
+          </div> <!-- input-group.// -->
+        </div> <!-- form-group// -->
+        <div class="form-group">
+          <button type="submit" class="btn btn-primary btn-block"> Login </button>
+        </div> <!-- form-group// -->
+        <p class="text-center"><a href="#" class="btn">Forgot password?</a></p>
+      </form>
+    </form>
+  </div>
+
+  <!-- Footer -->
+  <footer class="container">
+    <div class="row">
+      <div class="col-sm-3"> Logo</div>
+      <div class="col-sm-9">
+        <div class="row">
+          <div class="col-sm-6">
+            bai 1
+          </div>
+          <div class="col-sm-6">
+            bai 2
+          </div>
+          <div class="col-sm-6">
+            bai 3
+          </div>
+          <div class="col-sm-6">
+            bai 4
+          </div>
+        </div>
+      </div>
+    </div>
+    <p>@2023</p>
+  </footer>
+
+  <!-- jQuery first, then Popper.js, then Bootstrap JS. -->
+  <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
+  <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
+  <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
 </body>
 
 </html>
